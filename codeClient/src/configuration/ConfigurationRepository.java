@@ -70,6 +70,9 @@ public class ConfigurationRepository implements IConfigurationRepository {
         return messages;
     }
 
+    
+    
+    
     private List<IMail> RetreaveMessagesFromFile(String filePath) throws IOException {
         List<IMail> listMail;
         BufferedReader reader = null;
@@ -94,6 +97,8 @@ public class ConfigurationRepository implements IConfigurationRepository {
             throw e;
         }
     }
+    
+    
 
     private List<IPersonne> RetreaveVictimsFromFile(String fileName) throws IOException {
         List<IPersonne> victims;

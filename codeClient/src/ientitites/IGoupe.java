@@ -14,9 +14,21 @@ import java.util.List;
  */
 public interface IGoupe {
     
+    /**
+     * get groups of reciever vivtims
+     * @return reciever
+     */
      List<IPersonne >getRecieverVictims();
-     void setRecieverVictims(List<IPersonne> victims);
      
-     IPersonne getSenderVictim();
-     void setSenderVictim(IPersonne perosnne);
+     /**
+      * set grous of reciever victims
+      * @param victims 
+      */
+     void setRecieverVictims(List<IPersonne> victims);
+
+     /**
+      * add victim into the group
+      * @param personne 
+      */
+     void addVictim(IPersonne personne);
 }

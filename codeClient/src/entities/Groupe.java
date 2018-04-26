@@ -7,32 +7,44 @@ package entities;
 
 import ientitites.IGoupe;
 import ientitites.IPersonne;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author ZEED
  */
-public class Groupe implements IGoupe{
+public class Groupe implements IGoupe {
+
+    List<IPersonne> groupeReciever;
+    IPersonne sender;
+
+    public Groupe() {
+        groupeReciever = new ArrayList();
+        sender = new Personne();
+    }
+    
+    public Groupe(IPersonne sender){
+        groupeReciever = new ArrayList();
+        this.sender = sender;
+    }
+    
 
     @Override
     public List<IPersonne> getRecieverVictims() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return groupeReciever;
     }
 
     @Override
     public void setRecieverVictims(List<IPersonne> victims) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       groupeReciever = victims;
     }
 
-    @Override
-    public IPersonne getSenderVictim() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     @Override
-    public void setSenderVictim(IPersonne perosnne) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void addVictim(IPersonne personne) {
+        this.groupeReciever.add(personne);
     }
-    
+
 }

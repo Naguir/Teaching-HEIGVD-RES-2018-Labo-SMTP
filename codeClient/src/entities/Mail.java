@@ -5,6 +5,7 @@
  */
 package entities;
 
+import ientitites.IGoupe;
 import ientitites.IMail;
 import ientitites.IPersonne;
 import java.util.List;
@@ -13,46 +14,52 @@ import java.util.List;
  *
  * @author ZEED
  */
-public class Mail implements IMail{
+public class Mail implements IMail {
+
+    private IPersonne sender;
+    private IGoupe listVictims;
+    private String to;
+    private String subject;
+    private String message;
 
     @Override
-    public List<IPersonne> getTo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public IGoupe getTo() {
+        return listVictims;
     }
 
     @Override
-    public void setTo(List<IPersonne> to) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setTo(IGoupe to) {
+        this.listVictims = to;
     }
 
     @Override
     public String getSubject() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return subject;
     }
 
     @Override
     public void setSubject(String subject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.subject = subject;
     }
 
     @Override
-    public String getFrom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public IPersonne getFrom() {
+        return sender;
     }
 
     @Override
-    public void setFrom(String from) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setFrom(IPersonne from) {
+        sender = from;
     }
 
     @Override
     public String getMessage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return message;
     }
 
     @Override
     public void setMessage(String message) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.message = message;
     }
-    
+
 }

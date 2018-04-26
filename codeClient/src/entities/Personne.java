@@ -15,6 +15,8 @@ public class Personne implements IPersonne {
 
     private String adresse;
 
+    public Personne(){}
+    
     public Personne(String adresse) {
         this.adresse = adresse;
     }

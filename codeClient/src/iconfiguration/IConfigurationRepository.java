@@ -47,5 +47,7 @@ public interface IConfigurationRepository {
      * @return list of mails
      */
     List<IMail> retreaveMailsFromConfig();
+    
+    
 
 }

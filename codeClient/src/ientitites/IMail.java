@@ -5,6 +5,7 @@
  */
 package ientitites;
 
+import entities.Groupe;
 import java.util.List;
 
 /**
@@ -17,14 +18,14 @@ public interface IMail {
      *
      * @return recevers
      */
-    List<IPersonne> getTo();
+    IGoupe getTo();
 
     /**
      * set all recevers
      *
      * @param to list of recievers
      */
-    void setTo(List<IPersonne> to);
+    void setTo(IGoupe to);
 
     /**
      * get mail subject
@@ -45,14 +46,14 @@ public interface IMail {
      *
      * @return expeditor
      */
-    String getFrom();
+    IPersonne getFrom();
 
     /**
      * set expeditor
      *
      * @param from
      */
-    void setFrom(String from);
+    void setFrom(IPersonne from);
 
     /**
      * get message
