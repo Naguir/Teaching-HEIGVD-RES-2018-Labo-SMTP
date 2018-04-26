@@ -8,9 +8,11 @@ package configuration;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 import entities.Mail;
 import entities.Personne;
+import entities.ServerConfig;
 import iconfiguration.IConfigurationRepository;
 import ientitites.IMail;
 import ientitites.IPersonne;
+import ientitites.IServerConfig;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -27,8 +29,7 @@ import java.util.Properties;
 public class ConfigurationRepository implements IConfigurationRepository {
 
     private int nbgroups;
-    private String adresse;
-    private int port;
+    private IServerConfig serverConfig;
     private List<IPersonne> victims;
     private List<IMail> messages;
 
@@ -36,9 +37,10 @@ public class ConfigurationRepository implements IConfigurationRepository {
         FileInputStream fin = new FileInputStream(filePath);
         Properties properties = new Properties();
         properties.load(fin);
+        serverConfig = new ServerConfig();
 
-        adresse = properties.getProperty("smtpServerAdress");
-        port = Integer.parseInt(properties.getProperty("smtpServerPort"));
+        serverConfig.setAdresse(properties.getProperty("smtpServerAdress"));
+        serverConfig.setPort(Integer.parseInt(properties.getProperty("smtpServerPort")));
         nbgroups = Integer.parseInt(properties.getProperty("numberOfGroups"));
         victims = RetreaveVictimsFromFile(properties.getProperty("victimListeFile"));
         messages = RetreaveMessagesFromFile(properties.getProperty("messagesListeFile"));
@@ -46,13 +48,8 @@ public class ConfigurationRepository implements IConfigurationRepository {
     }
 
     @Override
-    public String retreaveAdressFromConfig(String filePath) throws IOException {
-        return adresse;
-    }
-
-    @Override
-    public int retreavePortFromConfig() {
-        return port;
+    public IServerConfig retreaveServerFromConfigConfig() {
+        return serverConfig;
     }
 
     @Override
@@ -70,9 +67,6 @@ public class ConfigurationRepository implements IConfigurationRepository {
         return messages;
     }
 
-    
-    
-    
     private List<IMail> RetreaveMessagesFromFile(String filePath) throws IOException {
         List<IMail> listMail;
         BufferedReader reader = null;
@@ -97,8 +91,6 @@ public class ConfigurationRepository implements IConfigurationRepository {
             throw e;
         }
     }
-    
-    
 
     private List<IPersonne> RetreaveVictimsFromFile(String fileName) throws IOException {
         List<IPersonne> victims;

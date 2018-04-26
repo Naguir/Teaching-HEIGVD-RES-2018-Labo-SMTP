@@ -8,6 +8,7 @@ package iconfiguration;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 import ientitites.IMail;
 import ientitites.IPersonne;
+import ientitites.IServerConfig;
 import java.io.IOException;
 import java.util.List;
 
@@ -18,17 +19,13 @@ import java.util.List;
 public interface IConfigurationRepository {
 
        
-    /**
-     * retreave smtp server adress
-     * @return adresse
-     */
-    String retreaveAdressFromConfig(String filePath) throws IOException;
+
 
     /**
-     * retreave port number
-     * @return port number
+     * retreave server config
+     * @return configuration of server
      */
-    int retreavePortFromConfig();
+    IServerConfig retreaveServerFromConfigConfig();
 
     /**
      * retreave number of groups

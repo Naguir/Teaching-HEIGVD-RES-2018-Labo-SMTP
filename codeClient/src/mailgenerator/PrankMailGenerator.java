@@ -1,3 +1,6 @@
+package mailgenerator;
+
+
 
 import configuration.ConfigurationRepository;
 import entities.Groupe;
@@ -20,8 +23,8 @@ public class PrankMailGenerator implements IPrankMailGenerator {
 
     IConfigurationRepository configurationRepository;
 
-    public PrankMailGenerator(String filePath) throws IOException {
-        configurationRepository = new ConfigurationRepository(filePath);
+    public PrankMailGenerator(IConfigurationRepository configurationRepository) throws IOException {
+        configurationRepository = configurationRepository;
     }
 
     @Override
