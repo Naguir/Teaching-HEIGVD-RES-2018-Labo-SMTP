@@ -1,5 +1,6 @@
-package ientitites;
+package iclient;
 
+import ientitites.*;
 import java.net.Socket;
 
 /**

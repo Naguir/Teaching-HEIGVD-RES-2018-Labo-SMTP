@@ -9,7 +9,15 @@ package ientitites;
  *
  * @author Guillaume Zaretti
  */
-public class IPrank {
-    
-    
+public interface IPrank {
+    /**
+     * get message
+     * @return massage
+     */
+    String getMessage();
+    /**
+     * modify message
+     * @param message 
+     */
+    void setMessage(String message);   
 }
