@@ -29,7 +29,7 @@ public class Labo03 {
     public static void main(String[] args) throws IOException {
         String filePath;
         //Update this path for your computer
-        filePath = "C:\\Users\\Nair\\Desktop\\Docs-HES\\2017-2018\\RES\\Laboratoires\\Teaching-HEIGVD-RES-2018-Labo-SMTP\\testCompile\\otherCompilTest\\config\\config.properties";
+        filePath = "C:\\Users\\Nair\\Desktop\\Docs-HES\\2017-2018\\RES\\Laboratoires\\Teaching-HEIGVD-RES-2018-Labo-SMTP\\PrankEmail\\config\\config.properties";
 
         IConfigurationRepository cfgRepo = new ConfigurationRepository(filePath);
         IPrankMailGenerator pg = new PrankMailGenerator(cfgRepo);
