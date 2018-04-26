@@ -17,9 +17,6 @@ import java.util.List;
  */
 public class SmtpClient implements ISmtpClient {
 
-    private String ipAdress;
-    private int port;
-
     private BufferedReader reader;
     private PrintWriter writer;
     private Socket socket;

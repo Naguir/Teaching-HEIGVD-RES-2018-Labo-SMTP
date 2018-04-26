@@ -1,6 +1,7 @@
 
 import configuration.ConfigurationRepository;
 import entities.Groupe;
+import entities.Personne;
 import iconfiguration.IConfigurationRepository;
 import ientitites.IGoupe;
 import ientitites.IMail;
@@ -40,9 +41,16 @@ public class PrankMailGenerator implements IPrankMailGenerator {
             i++;
         }
         
-        List<IMail> listofmail = configurationRepository.retreaveMailsFromConfig();
-        
-        return ;
+        List<IMail> listMail = new ArrayList();
+                
+        i = 0;
+        for(IMail m : configurationRepository.retreaveMailsFromConfig()){
+            m.setTo(groups.get(i % nbGroupe));
+            m.setFrom(new Personne("uneAdresseJeSaisPasOu@toto.local"));
+            listMail.add(m);
+            
+        }   
+        return listMail;
     }
 
 }
