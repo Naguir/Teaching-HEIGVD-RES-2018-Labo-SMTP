@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package iconfiguration;
+package imailgenerator;
 
 /**
  *
  * @author ZEED
  */
-public class IConfigurationManager {
+public interface IPrankMailGenerator {
     
 }

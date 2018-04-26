@@ -18,5 +18,5 @@ public interface IGoupe {
      void setRecieverVictims(List<IPersonne> victims);
      
      IPersonne getSenderVictim();
-     void setSenderVictim();
+     void setSenderVictim(IPersonne perosnne);
 }
