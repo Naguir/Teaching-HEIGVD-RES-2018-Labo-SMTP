@@ -5,10 +5,21 @@
  */
 package imailgenerator;
 
+import ientitites.IGoupe;
+import ientitites.IMail;
+import java.util.List;
+
 /**
  *
  * @author ZEED
  */
 public interface IPrankMailGenerator {
+
+    
+    /**
+     * Generate a list of email pranks
+     * @return 
+     */
+    List<IMail> generateMailPranks();
     
 }

@@ -22,30 +22,30 @@ public interface IConfigurationRepository {
      * retreave smtp server adress
      * @return adresse
      */
-    String retreaveAdress(String filePath) throws IOException;
+    String retreaveAdressFromConfig(String filePath) throws IOException;
 
     /**
      * retreave port number
      * @return port number
      */
-    int retreavePort();
+    int retreavePortFromConfig();
 
     /**
      * retreave number of groups
      * @return number groupes
      */
-    int retreaveNbGroups();
+    int retreaveNbGroupsFromConfig();
 
     /**
      * retreave victims list
      * @return list of victims
      */
-    List<IPersonne> retreaveVictims();
+    List<IPersonne> retreaveVictimsFromConfig();
 
     /**
      * retreave mails
      * @return list of mails
      */
-    List<IMail> retreaveMails();
+    List<IMail> retreaveMailsFromConfig();
 
 }

@@ -46,27 +46,27 @@ public class ConfigurationRepository implements IConfigurationRepository {
     }
 
     @Override
-    public String retreaveAdress(String filePath) throws IOException {
+    public String retreaveAdressFromConfig(String filePath) throws IOException {
         return adresse;
     }
 
     @Override
-    public int retreavePort() {
+    public int retreavePortFromConfig() {
         return port;
     }
 
     @Override
-    public int retreaveNbGroups() {
+    public int retreaveNbGroupsFromConfig() {
         return nbgroups;
     }
 
     @Override
-    public List<IPersonne> retreaveVictims() {
+    public List<IPersonne> retreaveVictimsFromConfig() {
         return victims;
     }
 
     @Override
-    public List<IMail> retreaveMails() {
+    public List<IMail> retreaveMailsFromConfig() {
         return messages;
     }
 
