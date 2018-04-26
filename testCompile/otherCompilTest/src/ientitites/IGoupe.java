@@ -10,6 +10,7 @@ import java.util.List;
 /**
  *
  * @author Guillaume Zaretti
+ * @author Nair Alic
  * Groupe of victimes, contains the sender victime and all riciever victimes
  */
 public interface IGoupe {

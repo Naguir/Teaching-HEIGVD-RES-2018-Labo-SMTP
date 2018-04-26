@@ -23,7 +23,8 @@ import java.util.Properties;
 
 /**
  *
- * @author ZEED
+ * @author Guillaume Zaretti
+ * @author Nair Alic
  */
 public class ConfigurationRepository implements IConfigurationRepository {
 

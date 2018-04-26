@@ -15,6 +15,7 @@ import java.util.List;
 /**
  *
  * @author Guillaume Zaretti
+ * @author Nair Alic
  */
 public class SmtpClient implements ISmtpClient {
 
@@ -61,7 +62,9 @@ public class SmtpClient implements ISmtpClient {
                 }
                 writer.print(mail.getTo().getRecieverVictims().get(i).getAdresse());
             }
-
+            writer.print("\r\n");
+            writer.print("Subject: " + mail.getSubject());
+            writer.print("\r\n");
             writer.print("\r\n");
             writer.println(mail.getSubject());
             writer.println(mail.getMessage());

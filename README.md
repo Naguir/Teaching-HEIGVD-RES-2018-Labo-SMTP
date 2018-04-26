@@ -3,10 +3,10 @@
 ## Objectives and description
 
 The purpose of this project is to generate and send forged emails. Our application called "PrankEmail" is a simple TCP Java client who will randomly choose some email address, where
-there will be a sender (and the victims) and then will choose a forged message which will finally be sent to the victims. 
+there will be a sender and the victims, then it will choose a forged message which will finally be sent to the victims. 
 
-More info on project here ...
-
+There is a list of emails which are in the file "victims.txt", same for the messages there is a file where the application will read from.
+You can also check the "config.properties" file, where you can modify the IP address and port and the number of groups of victims.
 
 
 ## SMTP MockMock Server running on Docker
@@ -24,4 +24,5 @@ where you will find the emails you sent to the server.
 In case you want to change the SMTP port or the web port, please check and update carefully the Dockerfile and the commands you typed above.
 
 ## PrankEmail application
-
+Now that you have a SMTP server running, try out by running the PrankEmail application and check the on the Web Interface emails that were sent.
+Enjoy!

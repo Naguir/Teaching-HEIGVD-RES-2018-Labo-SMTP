@@ -11,7 +11,8 @@ import java.util.List;
 
 /**
  *
- * @author ZEED
+ * @author Guillaume Zaretti
+ * @author Nair Alic
  */
 public interface IPrankMailGenerator {
 

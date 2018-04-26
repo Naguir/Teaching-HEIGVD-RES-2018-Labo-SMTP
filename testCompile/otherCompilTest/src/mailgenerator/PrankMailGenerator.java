@@ -13,11 +13,12 @@ import imailgenerator.IPrankMailGenerator;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Random;
 
 /**
  *
- * @author ZEED
+ * @author Guillaume Zaretti
+ * @author Nair Alic
  */
 public class PrankMailGenerator implements IPrankMailGenerator {
 
@@ -29,7 +30,7 @@ public class PrankMailGenerator implements IPrankMailGenerator {
 
     @Override
     public List<IMail> generateMailPranks() {
-
+        Random rand = new Random();
         int nbGroupe = configurationRepository.retreaveNbGroupsFromConfig();
 
         List<IGoupe> groups = new ArrayList();
@@ -48,10 +49,11 @@ public class PrankMailGenerator implements IPrankMailGenerator {
                 
         i = 0;
         for(IMail m : configurationRepository.retreaveMailsFromConfig()){
+            int randomInt = rand.nextInt((configurationRepository.retreaveVictimsFromConfig().size()-1) + 1);
             m.setTo(groups.get(i % nbGroupe));
-            m.setFrom(new Personne("uneAdresseJeSaisPasOu@toto.local"));
+            m.setFrom(configurationRepository.retreaveVictimsFromConfig().get(randomInt));
             listMail.add(m);
-            
+            i++;
         }   
         return listMail;
     }

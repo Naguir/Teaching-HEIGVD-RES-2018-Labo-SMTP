@@ -7,7 +7,8 @@ package ientitites;
 
 /**
  *
- * @author ZEED
+ * @author Guillaume Zaretti
+ * @author Nair Alic
  */
 public interface IServerConfig {
 

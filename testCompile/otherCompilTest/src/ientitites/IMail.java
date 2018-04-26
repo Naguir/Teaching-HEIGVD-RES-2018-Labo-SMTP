@@ -9,7 +9,9 @@ import entities.Groupe;
 import java.util.List;
 
 /**
- * @author Guillaume Zaretti E-mail interface
+ * @author Guillaume Zaretti 
+ * @author Nair ALic
+ * E-mail interface
  */
 public interface IMail {
 

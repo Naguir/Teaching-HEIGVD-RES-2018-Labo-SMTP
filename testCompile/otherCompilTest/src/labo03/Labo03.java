@@ -18,7 +18,8 @@ import java.util.List;
 
 /**
  *
- * @author ZEED
+ * @author Guillaume Zaretti
+ * @author Nair Alic
  */
 public class Labo03 {
 
@@ -27,7 +28,8 @@ public class Labo03 {
      */
     public static void main(String[] args) throws IOException {
         String filePath;
-        filePath = "C:\\Users\\ZEED\\Documents\\RESBis\\labo3\\Teaching-HEIGVD-RES-2018-Labo-SMTP\\testCompile\\otherCompilTest\\config\\config.properties";
+        //Update this path for your computer
+        filePath = "C:\\Users\\Nair\\Desktop\\Docs-HES\\2017-2018\\RES\\Laboratoires\\Teaching-HEIGVD-RES-2018-Labo-SMTP\\testCompile\\otherCompilTest\\config\\config.properties";
 
         IConfigurationRepository cfgRepo = new ConfigurationRepository(filePath);
         IPrankMailGenerator pg = new PrankMailGenerator(cfgRepo);
