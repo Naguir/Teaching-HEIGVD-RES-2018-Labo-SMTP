@@ -38,16 +38,11 @@ public class SmtpClient implements ISmtpClient {
             writer.flush();
             line = reader.readLine();
 
-            if (line.startsWith("250")) {
-                while (!line.startsWith("250")) {
-                    line = reader.readLine();
-                }
-
-            } else {
-                throw new IOException("erreur");
+            while (!line.startsWith("250 ")) {
+                line = reader.readLine();
             }
 
-            writer.println("MAIL FROM: " + mail.getFrom());
+            writer.println("MAIL FROM: " + mail.getFrom().getAdresse());
             writer.flush();
             line = reader.readLine();
             for (IPersonne p : mail.getTo().getRecieverVictims()) {
@@ -58,13 +53,13 @@ public class SmtpClient implements ISmtpClient {
             writer.println("DATA");
             writer.flush();
             line = reader.readLine();
-            writer.println("From: " + mail.getFrom());
+            writer.println("From: " + mail.getFrom().getAdresse());
             writer.print("To: ");
             for (int i = 0; i < mail.getTo().getRecieverVictims().size(); i++) {
                 if (i > 0) {
                     writer.print(", ");
                 }
-                writer.print(mail.getTo().getRecieverVictims().get(i));
+                writer.print(mail.getTo().getRecieverVictims().get(i).getAdresse());
             }
 
             writer.print("\r\n");

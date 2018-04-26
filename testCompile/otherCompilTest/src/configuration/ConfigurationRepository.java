@@ -5,7 +5,6 @@
  */
 package configuration;
 
-import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 import entities.Mail;
 import entities.Personne;
 import entities.ServerConfig;
@@ -44,7 +43,6 @@ public class ConfigurationRepository implements IConfigurationRepository {
         nbgroups = Integer.parseInt(properties.getProperty("numberOfGroups"));
         victims = RetreaveVictimsFromFile(properties.getProperty("victimListeFile"));
         messages = RetreaveMessagesFromFile(properties.getProperty("messagesListeFile"));
-        System.out.println("Message list OK");
     }
 
     @Override
@@ -77,12 +75,11 @@ public class ConfigurationRepository implements IConfigurationRepository {
             String line = null;
             while ((line = reader.readLine()) != null) {
                 IMail mail = new Mail();
+                String subject = line;
                 while ((line = reader.readLine()) != null && !line.equals("##")) {
-                    if (line.startsWith("Subject: ")) {
-                        mail.setSubject(line.substring(9));
-                    }
                     mail.setMessage(mail.getMessage() + line + "\r\n");
                 }
+                mail.setSubject(subject.substring(9));
                 listMail.add(mail);
             }
             return listMail;

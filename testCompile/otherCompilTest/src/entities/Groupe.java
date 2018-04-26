@@ -17,19 +17,12 @@ import java.util.List;
 public class Groupe implements IGoupe {
 
     List<IPersonne> groupeReciever;
-    IPersonne sender;
-
-    public Groupe() {
-        groupeReciever = new ArrayList();
-        sender = new Personne();
-    }
-    
-    public Groupe(IPersonne sender){
-        groupeReciever = new ArrayList();
-        this.sender = sender;
-    }
     
 
+    public Groupe(){
+        groupeReciever = new ArrayList();
+    }
+    
     @Override
     public List<IPersonne> getRecieverVictims() {
         return groupeReciever;
@@ -39,8 +32,6 @@ public class Groupe implements IGoupe {
     public void setRecieverVictims(List<IPersonne> victims) {
        groupeReciever = victims;
     }
-
-   
 
     @Override
     public void addVictim(IPersonne personne) {

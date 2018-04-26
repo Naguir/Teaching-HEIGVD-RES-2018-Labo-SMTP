@@ -27,7 +27,7 @@ public class Labo03 {
      */
     public static void main(String[] args) throws IOException {
         String filePath;
-        filePath = "C:\\Users\\ZEED\\Documents\\RESBis\\labo3\\Teaching-HEIGVD-RES-2018-Labo-SMTP\\codeClient\\config\\config.properties";
+        filePath = "C:\\Users\\ZEED\\Documents\\RESBis\\labo3\\Teaching-HEIGVD-RES-2018-Labo-SMTP\\testCompile\\otherCompilTest\\config\\config.properties";
 
         IConfigurationRepository cfgRepo = new ConfigurationRepository(filePath);
         IPrankMailGenerator pg = new PrankMailGenerator(cfgRepo);

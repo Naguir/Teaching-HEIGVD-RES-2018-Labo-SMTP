@@ -18,7 +18,6 @@ public class Mail implements IMail {
 
     private IPersonne sender;
     private IGoupe listVictims;
-    private String to;
     private String subject;
     private String message;
 

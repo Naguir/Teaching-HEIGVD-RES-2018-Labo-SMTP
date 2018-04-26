@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package iconfiguration;
-
-import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 import ientitites.IMail;
 import ientitites.IPersonne;
 import ientitites.IServerConfig;

@@ -24,7 +24,7 @@ public class PrankMailGenerator implements IPrankMailGenerator {
     IConfigurationRepository configurationRepository;
 
     public PrankMailGenerator(IConfigurationRepository configurationRepository) throws IOException {
-        configurationRepository = configurationRepository;
+       this.configurationRepository = configurationRepository;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class PrankMailGenerator implements IPrankMailGenerator {
 
         List<IGoupe> groups = new ArrayList();
 
-        for (int i = 0; i <= nbGroupe; nbGroupe++) {
+        for (int i = 0; i < nbGroupe; i++) {
             groups.add(new Groupe());
         }
 
