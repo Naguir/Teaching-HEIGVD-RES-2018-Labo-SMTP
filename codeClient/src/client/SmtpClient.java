@@ -1,4 +1,4 @@
-package entities;
+package client;
 
 import ientitites.IMail;
 import ientitites.IPersonne;
